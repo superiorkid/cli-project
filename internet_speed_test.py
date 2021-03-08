@@ -5,7 +5,6 @@ speed  = speedtest.Speedtest()
 
 def main():
 	while True:
-
 		choice = int(input("""
 				Check your internet connection speed.\n
 					1) download speed\n
