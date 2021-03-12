@@ -1,8 +1,7 @@
 import psycopg2
-from psycopg2 import 
-
 import os
 
+# create connection
 con = psycopg2.connect(
 		user = 'postgres',
 		password = '',
@@ -62,7 +61,6 @@ def show_buku(db):
 	try:
 		cur = db.cursor()
 
-		# https://fle.github.io/reset-a-postgresql-sequence-and-recompute-column-values.html
 		# Set temporary values intentionally far of existing values to avoid conflicts when we recompute the column
 		cur.execute("UPDATE buku SET id_buku=10000+nextval('buku_id_buku_seq');")
 		# restart sequence to 1
